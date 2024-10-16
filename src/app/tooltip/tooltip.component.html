@@ -1,0 +1,12 @@
+
+
+<div class="tooltip-container" (mouseenter)="showTooltip()" (mouseleave)="hideTooltip()" (click)="toggleTooltip()">
+    <ng-content></ng-content>
+    <div class="tooltip-box" *ngIf="isVisible" [ngClass]="position">
+      {{ tooltipText }}
+      <button *ngIf="isClickMode" class="close-btn" (click)="closeTooltip()">X</button>
+    </div>
+  </div>
+  
+
+

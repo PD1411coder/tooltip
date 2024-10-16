@@ -1,0 +1,112 @@
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip-box {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    z-index: 10;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Default tooltip position (top) */
+  .tooltip-box.top {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .tooltip-box.top::after {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+  }
+  
+  /* Tooltip at the bottom */
+  .tooltip-box.bottom {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .tooltip-box.bottom::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
+  }
+  
+  /* Tooltip on the left */
+  .tooltip-box.left {
+    top: 50%;
+    left: -100%;
+    transform: translateY(-50%);
+  }
+  
+  .tooltip-box.left::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent #333;
+  }
+  
+  /* Tooltip on the right */
+  .tooltip-box.right {
+    top: 50%;
+    right: -100%;
+    transform: translateY(-50%);    
+  }
+  
+  .tooltip-box.right::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #333 transparent transparent;
+  }
+  
+  /* Show the tooltip when visible */
+ .tooltip-box,
+  .tooltip-box.ng-trigger {
+    opacity: 1;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 600px) {
+    .tooltip-box {
+      font-size: 14px;
+    }
+  }
+  
